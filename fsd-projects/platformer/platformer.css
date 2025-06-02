@@ -1,9 +1,10 @@
 body {
-  margin: 0px;
+background-color: #cccccc;
 }
 
 canvas {
   background-color: lightblue;
+  background-image: url("images/platformerbackground2.jpg");
   margin: 20px;
 }
 
