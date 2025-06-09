@@ -26,8 +26,8 @@ var circles = []; //creates a variable which stores all circles in an array
 
         // TODO 2 : Create a function that draws a circle 
         function drawCircle() {
-            circle = draw.randomCircleInArea(canvas, true, true, "#999", 2); //draws a circle on the canvas
-            physikz.addRandomVelocity(circle, canvas, 5, 5); //makes the circle go at a random speed
+            circle = draw.randomCircleInArea(canvas, true, true, "#999", 2); //adds a circle to the array and draws a circle on the canvas
+            physikz.addRandomVelocity(circle, canvas, 5, 5); //makes the circles within the array go at a random speed
             view.addChild(circle); //
             circles.push(circle); //
         }
@@ -41,9 +41,9 @@ var circles = []; //creates a variable which stores all circles in an array
            // function drawCircle();
             //made the first 5 circles which were present until the 100 circles were drawn
         // TODO 7 : Use a loop to create multiple circles
-            for (var i = 0; i <= 100; i++) { //creates 100 circles
-                drawCircle(100); //creates 100 circles
-}
+            for (var i = 0; i <= 100; i++) { // added 100 circles to the array and onto the canvas
+                drawCircle(); //creates 100 circles
+            }
 
 
 
@@ -74,8 +74,8 @@ var circles = []; //creates a variable which stores all circles in an array
                 //made sure the 5 initial circles stayed on screen
             // TODO 8 / TODO 9 : Iterate over the array
            for(var i = 0; i < circles.length; i++){ // applies the code below to all circles, so that way the circles will move randomly and stay on screen
-                physikz.updatePosition(circles[i]); //makes circles move randomly
-                game.checkCirclePosition(circles[i]); //keeps circles on screen
+                physikz.updatePosition(circles[i]); //everytime the loop runs, it changes the position of each circle in the array
+                game.checkCirclePosition(circles[i]); //everytime the loop runs, it keeps the circles within the array on screen
            }
             
         }
