@@ -31,6 +31,7 @@ var background = function (window) {
         // TODO (several):
         var tree;
         var buildings = [];
+        var bgImage1;
         // called at the start of game and whenever the page is resized
         // add objects for display in background. draws each image added to the background once
         function render() {
@@ -39,9 +40,32 @@ var background = function (window) {
             // TODO 1:
             // this currently fills the background with an obnoxious yellow;
             // you should modify both the height and color to suit your game
-            var backgroundFill = draw.rect(canvasWidth,groundY,'orange');
-            background.addChild(backgroundFill);
-            
+             var backgroundImage = new Image();
+            backgroundImage.src = "img/RuntimeBackground.png";
+
+
+            backgroundImage.onload = function() {
+                var bmp1 = new createjs.Bitmap(backgroundImage);
+                
+
+                // Scale to fit height up to groundY
+                var scaleY = groundY / backgroundImage.height;
+                var scaleX = app.canvas.width / backgroundImage.width;
+
+                bmp1.scaleX = scaleX;
+                bmp1.scaleY = scaleY;
+                
+
+                bmp1.x = 0;
+               
+                bmp1.y = 0;
+
+                bgImage1 = bmp1;
+                
+
+                background.addChildAt(bgImage1, 0);
+                
+            };
             // TODO 2: - Add a moon and starfield
 
 
